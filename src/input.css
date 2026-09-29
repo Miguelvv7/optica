@@ -188,18 +188,4 @@
   .map-pin { animation: pin-bob 2.4s ease-in-out infinite; }
   @media (prefers-reduced-motion: reduce) { .map-pin { animation: none; } }
 
-  /* ── Barra de acciones móvil ── */
-  .mbar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 55; display: grid; grid-template-columns: 1fr 1fr 1.25fr; gap: .5rem;
-          padding: .5rem .75rem calc(.5rem + env(safe-area-inset-bottom, 0px)); background: rgba(255,255,255,.96);
-          backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-top: 1px solid rgba(27,122,110,.12); box-shadow: 0 -6px 24px rgba(18,52,48,.08); }
-  .mbar-btn { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: .15rem; min-height: 52px; border-radius: 14px;
-              font-size: .75rem; font-weight: 600; color: #1B7A6E; background: #EAFAF6; transition: transform .15s; }
-  .mbar-btn:active { transform: scale(.97); }
-  .mbar-wa { color: #128C4A; background: #E7F8EE; }
-  .mbar-pri { flex-direction: row; gap: .45rem; font-size: .9rem; font-weight: 700; color: #fff; background: #1B7A6E; }
-  @media (max-width: 767px) {
-    body.has-mbar { padding-bottom: calc(70px + env(safe-area-inset-bottom, 0px)); }
-    body.has-mbar #toast { bottom: calc(86px + env(safe-area-inset-bottom, 0px)); }
-    body.has-mbar #cookie-banner { bottom: calc(70px + env(safe-area-inset-bottom, 0px)); }
-  }
 }
