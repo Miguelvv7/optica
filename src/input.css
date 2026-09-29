@@ -6,6 +6,7 @@
 @tailwind utilities;
 
 @layer base {
+  [hidden] { display: none !important; }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { font-family: 'Inter', sans-serif; background: #F7FBFC; color: #122A2E; -webkit-font-smoothing: antialiased; }
   .font-display { font-family: 'Plus Jakarta Sans', sans-serif; }
@@ -43,6 +44,7 @@
   .sr-r.show { opacity: 1; transform: none; }
   .sr-s { opacity: 0; transform: scale(.96); transition: opacity .5s ease, transform .5s ease; }
   .sr-s.show { opacity: 1; transform: none; }
+  @media (max-width: 767px) { .sr-l, .sr-r { transform: translateY(30px); } }
   .d1 { transition-delay: .1s; } .d2 { transition-delay: .2s; } .d3 { transition-delay: .3s; } .d4 { transition-delay: .4s; } .d5 { transition-delay: .5s; }
 
   /* ── Iconos SVG ── */
@@ -188,4 +190,37 @@
   .map-pin { animation: pin-bob 2.4s ease-in-out infinite; }
   @media (prefers-reduced-motion: reduce) { .map-pin { animation: none; } }
 
+  /* ── Lectura fácil (panel de accesibilidad) ── */
+  .a11y-panel { position: absolute; top: calc(100% + 8px); right: max(16px, calc((100vw - 1200px) / 2 + 40px)); width: min(320px, calc(100vw - 32px));
+                background: #fff; color: #123430; border-radius: 18px; padding: 1.1rem 1.2rem; display: grid; gap: .9rem; z-index: 60;
+                box-shadow: 0 18px 50px rgba(18,52,48,.18), 0 0 0 1px rgba(18,52,48,.06); }
+  .a11y-title { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; color: #1B7A6E; font-size: 1rem; }
+  .a11y-row { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+  .a11y-label { font-size: .9rem; font-weight: 600; }
+  .a11y-seg { display: inline-flex; border: 1.5px solid #C7E0D9; border-radius: 12px; overflow: hidden; }
+  .a11y-opt { width: 44px; height: 42px; display: flex; align-items: center; justify-content: center; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; color: #1B7A6E; background: #fff; }
+  .a11y-opt + .a11y-opt { border-left: 1.5px solid #C7E0D9; }
+  .a11y-opt[aria-pressed="true"] { background: #1B7A6E; color: #fff; }
+  .a11y-switch { cursor: pointer; }
+  .a11y-switch input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+  .a11y-track { position: relative; width: 48px; height: 28px; border-radius: 999px; background: #C7E0D9; transition: background .2s; flex-shrink: 0; }
+  .a11y-track::after { content: ''; position: absolute; top: 3px; left: 3px; width: 22px; height: 22px; border-radius: 50%; background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,.2); transition: transform .2s; }
+  .a11y-switch input:checked + .a11y-track { background: #1B7A6E; }
+  .a11y-switch input:checked + .a11y-track::after { transform: translateX(20px); }
+  .a11y-switch input:focus-visible + .a11y-track { outline: 3px solid #1F8272; outline-offset: 2px; }
+  .a11y-reset { justify-self: start; font-size: .85rem; font-weight: 600; color: #3E5B56; text-decoration: underline; text-underline-offset: 3px; }
+  .a11y-btn[aria-expanded="true"] { background: #E1F4EC; }
+
+  html.fs-lg { font-size: 112.5%; }
+  html.fs-xl { font-size: 125%; }
+  html.hc body { color: #0b1f1c; }
+  html.hc .text-on-surf-v, html.hc .text-on-surf-v\/80 { color: #1a2d2a !important; }
+  html.hc .text-white\/50, html.hc .text-white\/55, html.hc .text-white\/60, html.hc .text-white\/70, html.hc .text-white\/75, html.hc .text-white\/80 { color: #fff !important; }
+  html.hc .nav-link { color: #0b2226; }
+  html.hc main a:not([class*="bg-"]):not(.card):not(.group) { text-decoration: underline; text-underline-offset: 3px; }
+  html.hc .hero-ov { background: rgba(6,20,23,.9); }
+  html.hc .card, html.hc .shadow-card { box-shadow: 0 0 0 2px #1B7A6E !important; }
+  html.hc input, html.hc select, html.hc textarea { border: 2px solid #123430 !important; }
+  html.rm *, html.rm *::before, html.rm *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+  html.rm .sr, html.rm .sr-l, html.rm .sr-r, html.rm .sr-s { opacity: 1 !important; transform: none !important; }
 }

@@ -173,3 +173,34 @@ function animCount(el){
     });
   });
 })();
+
+// ── Lectura fácil: tamaño de letra, contraste y animaciones ──
+(function(){
+  var btn=document.getElementById('a11y-toggle'), panel=document.getElementById('a11y-panel');
+  if(!btn||!panel)return;
+  var root=document.documentElement, prefs={};
+  try{prefs=JSON.parse(localStorage.getItem('oa_prefs')||'{}')}catch(e){}
+  function save(){try{localStorage.setItem('oa_prefs',JSON.stringify(prefs))}catch(e){}}
+  function apply(){
+    root.classList.toggle('fs-lg',prefs.size==='lg');
+    root.classList.toggle('fs-xl',prefs.size==='xl');
+    root.classList.toggle('hc',!!prefs.hc);
+    root.classList.toggle('rm',!!prefs.rm);
+    panel.querySelectorAll('[data-size]').forEach(function(b){b.setAttribute('aria-pressed',String((prefs.size||'md')===b.dataset.size))});
+    document.getElementById('a11y-contrast').checked=!!prefs.hc;
+    document.getElementById('a11y-motion').checked=!!prefs.rm;
+  }
+  function open(v){
+    panel.hidden=!v; btn.setAttribute('aria-expanded',String(v));
+    if(v){var f=panel.querySelector('[aria-pressed="true"]'); if(f)f.focus();}
+  }
+  btn.addEventListener('click',function(e){e.stopPropagation(); open(panel.hidden);});
+  panel.addEventListener('click',function(e){e.stopPropagation();});
+  document.addEventListener('click',function(){ if(!panel.hidden)open(false); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape'&&!panel.hidden){open(false);btn.focus();} });
+  panel.querySelectorAll('[data-size]').forEach(function(b){b.addEventListener('click',function(){prefs.size=b.dataset.size;save();apply();});});
+  document.getElementById('a11y-contrast').addEventListener('change',function(e){prefs.hc=e.target.checked;save();apply();});
+  document.getElementById('a11y-motion').addEventListener('change',function(e){prefs.rm=e.target.checked;save();apply();});
+  document.getElementById('a11y-reset').addEventListener('click',function(){prefs={};save();apply();});
+  apply();
+})();
