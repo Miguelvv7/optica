@@ -50,7 +50,7 @@
   <link rel="preload" href="assets/fonts/plus-jakarta-sans.woff2" as="font" type="font/woff2" crossorigin/>
   <link rel="preload" href="assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin/>
   <script src="assets/js/prefs.js?v=1"></script>
-  <link rel="stylesheet" href="assets/css/main.css?v=9"/>
+  <link rel="stylesheet" href="assets/css/main.css?v=11"/>
 </head>
 <body>
 <header id="site-header" class="fixed top-0 w-full z-50 glass border-b border-outline-v/30 transition-shadow duration-300">
@@ -64,7 +64,6 @@
     <nav class="hidden md:flex items-center gap-7" aria-label="Navegación principal">
       <a href="/" class="nav-link">Inicio</a>
 <a href="/servicios" class="nav-link active" aria-current="page">Servicios</a>
-<a href="/casos-clinicos" class="nav-link hidden lg:inline">Casos clínicos</a>
 <a href="/ubicacion" class="nav-link">Ubicación</a>
 <a href="/ubicacion#contacto" class="nav-link">Contacto</a>
 
@@ -86,7 +85,6 @@
     <div class="max-w-site mx-auto px-4 py-3 flex flex-col gap-1">
       <a href="/" class="block px-4 py-3 rounded-xl text-on-surf hover:bg-surf-hi transition-colors font-medium">Inicio</a>
 <a href="/servicios" class="block px-4 py-3 rounded-xl text-on-surf hover:bg-surf-hi transition-colors font-medium">Servicios</a>
-<a href="/casos-clinicos" class="block px-4 py-3 rounded-xl text-on-surf hover:bg-surf-hi transition-colors font-medium">Casos clínicos</a>
 <a href="/ubicacion" class="block px-4 py-3 rounded-xl text-on-surf hover:bg-surf-hi transition-colors font-medium">Ubicación</a>
 <a href="/ubicacion#contacto" class="block px-4 py-3 rounded-xl text-on-surf hover:bg-surf-hi transition-colors font-medium">Contacto</a>
 
@@ -126,7 +124,6 @@
     <nav aria-label="Secciones de servicios" class="flex flex-wrap gap-3 sr d3">
       <a href="#salud-visual" class="inline-flex items-center gap-2 bg-white/10 hover:bg-white/15 border border-white/15 rounded-xl px-5 py-3 font-semibold transition-colors"><svg class="ico text-[#7FD8C6]" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M600.5-379.5Q650-429 650-500t-49.5-120.5Q551-670 480-670t-120.5 49.5Q310-571 310-500t49.5 120.5Q409-330 480-330t120.5-49.5Zm-200-41Q368-453 368-500t32.5-79.5Q433-612 480-612t79.5 32.5Q592-547 592-500t-32.5 79.5Q527-388 480-388t-79.5-32.5ZM216-283Q98-366 40-500q58-134 176-217t264-83q146 0 264 83t176 217q-58 134-176 217t-264 83q-146 0-264-83Zm264-217Zm222.5 174.5Q804-391 857-500q-53-109-154.5-174.5T480-740q-121 0-222.5 65.5T102-500q54 109 155.5 174.5T480-260q121 0 222.5-65.5Z"/></svg>Salud visual</a>
       <a href="#salud-auditiva" class="inline-flex items-center gap-2 bg-white/10 hover:bg-white/15 border border-white/15 rounded-xl px-5 py-3 font-semibold transition-colors"><svg class="ico text-[#7FD8C6]" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M272-81q57 0 99-31t62-82q20-51 39.5-79.5T546-345q66-53 95-113t29-146q0-120-76-196.5T398-877q-118 0-195.5 73.5T120-616h60q5-88 65.5-144.5T398-817q90 0 151 61.5T610-604q0 72-28 124.5T489-378q-39 29-62.5 63T382-231q-17 42-44.5 66T272-141q-35 0-60.5-24T181-224h-60q5 60 48 101.5T272-81Zm449-221q57-63 88-141.5T840-608q0-85-29.5-164.5T721-913l-45 40q52 53 78 121.5T780-608q0 74-26.5 142.5T676-343l45 41ZM464-538q27-27 27-66t-27-67q-27-28-66-28t-67 28q-28 28-28 67t28 66q28 27 67 27t66-27Z"/></svg>Salud auditiva</a>
-      <a href="/casos-clinicos" class="inline-flex items-center gap-2 bg-white/10 hover:bg-white/15 border border-white/15 rounded-xl px-5 py-3 font-semibold transition-colors"><svg class="ico text-[#7FD8C6]" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M479.5-267q72.5 0 121.5-49t49-121.5q0-72.5-49-121T479.5-607q-72.5 0-121 48.5t-48.5 121q0 72.5 48.5 121.5t121 49Zm0-60q-47.5 0-78.5-31.5t-31-79q0-47.5 31-78.5t78.5-31q47.5 0 79 31t31.5 78.5q0 47.5-31.5 79t-79 31.5ZM140-120q-24 0-42-18t-18-42v-513q0-23 18-41.5t42-18.5h147l73-87h240l73 87h147q23 0 41.5 18.5T880-693v513q0 24-18.5 42T820-120H140Zm0-60h680v-513H645l-73-87H388l-73 87H140v513Zm340-257Z"/></svg>Casos clínicos</a>
     </nav>
     </div>
     <ul class="hidden lg:grid lg:col-span-5 grid-cols-2 gap-4 sr-s d2" aria-label="Algunas de nuestras pruebas">
@@ -168,18 +165,20 @@
         <h3 class="font-display font-bold text-pri mb-2">Lentes de Orto-k</h3>
         <p class="text-on-surf-v text-sm leading-relaxed">Lentes especiales para el control de la miopía.</p>
       </div>
-      <div class="bg-white rounded-2xl p-6 card group sr d3">
+      <div class="relative bg-white rounded-2xl p-6 card group sr d3">
+        <button type="button" class="peek peek-card" data-full="img/gabinete/fondo-ojo-1.jpg" data-cap="Fondo de ojo fotografiado con nuestro retinógrafo" aria-label="Ver foto: Fondo de ojo fotografiado con nuestro retinógrafo"><picture><source srcset="img/gabinete/fondo-ojo-1.webp" type="image/webp"/><img src="img/gabinete/fondo-ojo-1.jpg" alt="Fotografía del fondo de ojo" width="240" height="240" loading="lazy" decoding="async"/></picture></button>
         <div class="w-12 h-12 rounded-xl bg-surf-hi flex items-center justify-center text-sec mb-4 group-hover:bg-sec group-hover:text-white transition-colors">
           <svg class="ico" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M479.5-267q72.5 0 121.5-49t49-121.5q0-72.5-49-121T479.5-607q-72.5 0-121 48.5t-48.5 121q0 72.5 48.5 121.5t121 49Zm0-60q-47.5 0-78.5-31.5t-31-79q0-47.5 31-78.5t78.5-31q47.5 0 79 31t31.5 78.5q0 47.5-31.5 79t-79 31.5ZM140-120q-24 0-42-18t-18-42v-513q0-23 18-41.5t42-18.5h147l73-87h240l73 87h147q23 0 41.5 18.5T880-693v513q0 24-18.5 42T820-120H140Zm0-60h680v-513H645l-73-87H388l-73 87H140v513Zm340-257Z"/></svg>
         </div>
-        <h3 class="font-display font-bold text-pri mb-2">Retinografía</h3>
+        <h3 class="font-display font-bold text-pri mb-2 pr-24 lg:pr-28">Retinografía</h3>
         <p class="text-on-surf-v text-sm leading-relaxed">Examen del fondo del ojo para cribado de patología ocular, con servicios de telemedicina con especialistas en patología ocular e IA.</p>
       </div>
-      <div class="bg-white rounded-2xl p-6 card group sr">
+      <div class="relative bg-white rounded-2xl p-6 card group sr">
+        <button type="button" class="peek peek-card" data-full="img/gabinete/ojo-2.jpg" data-cap="Ojo visto de cerca con la lámpara de hendidura" aria-label="Ver foto: Ojo visto de cerca con la lámpara de hendidura"><picture><source srcset="img/gabinete/ojo-2-sm.webp" type="image/webp"/><img src="img/gabinete/ojo-2-sm.jpg" alt="Ojo visto con lámpara de hendidura" width="240" height="240" loading="lazy" decoding="async"/></picture></button>
         <div class="w-12 h-12 rounded-xl bg-surf-hi flex items-center justify-center text-sec mb-4 group-hover:bg-sec group-hover:text-white transition-colors">
           <svg class="ico" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M200-120v-60h208v-104h-15q-81 0-137-56t-56-137q0-61 35-111t92-70q4-40 35-65t72-22l-21-59 41-14.56L440-856l66-24 14 37 40-14 113 295-43 15 14 37-64 23-14-37-43 16-25-68q-15 17-35.5 24.5t-43.83 6.5Q393-546 371-561t-35-38q-35 17-55.5 49.97Q260-516.07 260-477q0 55.42 38.79 94.21Q337.58-344 393-344h347v60H508v104h252v60H200Zm356-452 53-19-80-206-53 19 80 206Zm-94.5-37.32q14.5-14.33 14.5-35.5 0-21.18-14.32-35.68-14.33-14.5-35.5-14.5-21.18 0-35.68 14.32-14.5 14.33-14.5 35.5 0 21.18 14.32 35.68 14.33 14.5 35.5 14.5 21.18 0 35.68-14.32ZM556-572Zm-130-75Zm2 0Z"/></svg>
         </div>
-        <h3 class="font-display font-bold text-pri mb-2">Biomicroscopía</h3>
+        <h3 class="font-display font-bold text-pri mb-2 pr-24 lg:pr-28">Biomicroscopía</h3>
         <p class="text-on-surf-v text-sm leading-relaxed">Examen de los medios oculares y su estado y transparencia.</p>
       </div>
       <div class="bg-white rounded-2xl p-6 card group sr d1">
@@ -220,20 +219,6 @@
         <p class="text-on-surf-v text-xs mt-0.5">Carta optométrica interactiva, 1 minuto</p>
       </div>
       <svg class="ico text-sec ml-auto" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M686-450H160v-60h526L438-758l42-42 320 320-320 320-42-42 248-248Z"/></svg>
-    </a>
-    <a href="/casos-clinicos" class="group mt-6 grid grid-cols-1 md:grid-cols-5 rounded-2xl overflow-hidden bg-[#0B2226] text-white shadow-card-h sr">
-      <div class="md:col-span-2 relative aspect-[16/9] md:aspect-auto md:min-h-[240px] bg-black overflow-hidden">
-        <picture>
-          <source srcset="img/casos/aceite-silicona-intravitreo-circulo.webp" type="image/webp"/>
-          <img src="img/casos/aceite-silicona-intravitreo-circulo.jpg" alt="" width="900" height="900" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"/>
-        </picture>
-      </div>
-      <div class="md:col-span-3 p-6 md:p-10 flex flex-col justify-center">
-        <span class="text-xs font-bold uppercase tracking-widest text-[#7FD8C6] mb-2">Casos clínicos reales</span>
-        <h3 class="font-display text-2xl md:text-3xl font-bold mb-3">Mira lo que detectan nuestras pruebas</h3>
-        <p class="text-white/70 leading-relaxed mb-5">Retinografías y biomicroscopías tomadas en nuestro gabinete: desprendimiento de retina, hipopion, lentes intraoculares desplazadas y más, explicado de forma sencilla.</p>
-        <span class="inline-flex items-center gap-1 font-semibold text-[#7FD8C6] group-hover:gap-2 transition-all">Ver los casos<svg class="ico text-[20px]" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M686-450H160v-60h526L438-758l42-42 320 320-320 320-42-42 248-248Z"/></svg></span>
-      </div>
     </a>
   </div>
 </section>
@@ -465,6 +450,13 @@
   </div>
 </section>
 
+<!-- Visor de fotos -->
+<dialog id="lb" class="lb" aria-label="Foto ampliada">
+  <div class="lb-inner">
+    <button type="button" class="lb-btn lb-close" aria-label="Cerrar"><svg class="ico" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="m249-207-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/></svg></button>
+    <figure class="lb-fig"><img id="lb-img" alt=""/><figcaption id="lb-cap"></figcaption></figure>
+  </div>
+</dialog>
 </main>
 
 <footer class="bg-pri text-white">
@@ -500,7 +492,6 @@
         <ul class="space-y-2 text-sm text-white/75">
           <li><a href="/"      class="hover:text-white transition-colors">Inicio</a></li>
           <li><a href="/servicios"  class="hover:text-white transition-colors">Servicios</a></li>
-          <li><a href="/casos-clinicos" class="hover:text-white transition-colors">Casos clínicos</a></li>
           <li><a href="/ubicacion"  class="hover:text-white transition-colors">Ubicación</a></li>
           <li><a href="/ubicacion#contacto" class="hover:text-white transition-colors">Contacto</a></li>
           <li><a href="/pedir-cita" class="hover:text-white transition-colors">Pedir Cita</a></li>
@@ -571,5 +562,6 @@
   </div>
 </div>
 <script src="assets/js/main.js?v=6" defer></script>
+<script src="assets/js/fotos.js?v=1" defer></script>
 
 </body></html>

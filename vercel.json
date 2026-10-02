@@ -13,6 +13,11 @@
       "source": "/index.html",
       "destination": "/",
       "permanent": true
+    },
+    {
+      "source": "/casos-clinicos",
+      "destination": "/",
+      "permanent": false
     }
   ],
   "headers": [
